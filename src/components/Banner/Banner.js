@@ -1,13 +1,11 @@
 import React from 'react'
-import './Banner.css'
+import './Banner.css' //Sempre importar o css
 
 const Banner = () => {
   return (
     <div>
         <header className='banner'>
-        <h1>Olá mundo!!!</h1>
-        <h2>Bem vindo ao React!</h2>
-        <img src="/imagens/banner.png" alt="" />
+        <img src="/imagens/banner.png" alt="imagem do banner" className='banner'/>
         </header>
       
     </div>
