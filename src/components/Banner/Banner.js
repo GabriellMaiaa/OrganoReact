@@ -5,7 +5,9 @@ const Banner = () => {
   return (
     <div>
         <header className='banner'>
-        <img src="components/imagens/banner.png" alt='Banner principal'/>
+        <h1>Olá mundo!!!</h1>
+        <h2>Bem vindo ao React!</h2>
+        <img src="/imagens/banner.png" alt="" />
         </header>
       
     </div>
