@@ -22,7 +22,7 @@ const Formulario = () => {
                     <CampoTexto label="Cargo" placeholder='Digite seu cargo' />
                     <CampoTexto label="Imagem" placeholder='Digite o indereço da imagem' />
                     {/**Abaixo vai ser passado a Lista Suspensa com as Props */}
-                    <ListaSuspensa itens={times}/>
+                    <ListaSuspensa label="Time" itens={times}/>
                 </form>
             </section>
         </div>

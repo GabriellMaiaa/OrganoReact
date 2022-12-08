@@ -4,7 +4,7 @@ import "./ListaSuspensa.css"
 const ListaSuspensa = (props) => {
     //Nós iremos ter como props = Itens e a label
     return (
-    <div>
+    <div className='lista-suspensa'>
       <label>{props.label}</label>
       <select>{/**Quero retornar os valores com o MAP */} {/*NÃO ESQUECA DA CHAVE KEY */}
         {props.itens.map(item => <option key={item}>{item}</option>)} {/*Aqui eu quero retornar os valores que serão passados como props */}
