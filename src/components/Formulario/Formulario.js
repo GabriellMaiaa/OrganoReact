@@ -1,4 +1,5 @@
 import React from 'react'
+import Botao from '../Botao/Botao'
 import CampoTexto from '../CampoTexto/CampoTexto'
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa'
 import "./Formulario.css"
@@ -23,6 +24,10 @@ const Formulario = () => {
                     <CampoTexto label="Imagem" placeholder='Digite o indereço da imagem' />
                     {/**Abaixo vai ser passado a Lista Suspensa com as Props */}
                     <ListaSuspensa label="Time" itens={times}/>
+                    {/*Informações do Botão */}
+                    <Botao>{/*Exemplo de Children Props */}
+                        Criar Card
+                    </Botao>
                 </form>
             </section>
         </div>
