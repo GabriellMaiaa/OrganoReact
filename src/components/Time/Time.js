@@ -4,7 +4,7 @@ import "./Time.css"
 const Time = (props) => { //Vamos chamar por Props devido ao parâmetros dela que serão passados
   return (
     <div>
-      <section>
+      <section className='time'>
         <h3>{props.nome}</h3>
       </section>
     </div>
