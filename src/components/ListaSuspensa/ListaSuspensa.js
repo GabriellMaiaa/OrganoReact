@@ -6,7 +6,7 @@ const ListaSuspensa = (props) => {
     return (
     <div className='lista-suspensa'>
       <label>{props.label}</label>
-      <select required = {props.obrigatorio}>{/**Quero retornar os valores com o MAP */} {/*NÃO ESQUECA DA CHAVE KEY */}
+      <select onChange={e =>props.aoAlterado(e.target.value)} required = {props.obrigatorio} value={props.value}>{/**Quero retornar os valores com o MAP */} {/*NÃO ESQUECA DA CHAVE KEY */}
         {props.itens.map(item => <option key={item}>{item}</option>)} {/*Aqui eu quero retornar os valores que serão passados como props */}
       </select>{/*O MAP se utiliza para tudo que você deseja retornar em Props */}
     </div>

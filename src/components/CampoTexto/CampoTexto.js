@@ -7,7 +7,6 @@ const CampoTexto = (props) => {
     
     //let valor =''//Irei atribuir a var valor ao que for digitado
     
-
     const aoDigitar = (e) => {
       props.aoAlterado(e.target.value)
   }

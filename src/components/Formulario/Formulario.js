@@ -3,9 +3,9 @@ import Botao from '../Botao/Botao'
 import CampoTexto from '../CampoTexto/CampoTexto'
 import ListaSuspensa from '../ListaSuspensa/ListaSuspensa'
 import "./Formulario.css"
-import { useState } from 'react'
 
-const Formulario = () => {
+
+const Formulario = (props) => {
    
    const times = [ //Esse Array vai ser usado como valor para a nossa PROPS Itenss
     'Programação',
@@ -19,10 +19,16 @@ const Formulario = () => {
 const [nome, setNome] = useState('') // Tem que ter uma Alteração de estado para cada uma OPÇÃO
 const [cargo, setCargo] = useState('')
 const [imagem, setImagem] = useState('')
+const [time, setTime] = useState('')
 
 const aoSalvar = (evento) => {
     evento.preventDefault()
-    console.log('Foi enviadooo', nome, cargo, imagem)
+    props.aoColaboradorCadastrado ({ //Função que foi chamada no APP.js para retornar a resposta do cadastro em objeto
+        nome:nome,
+        imagem:imagem,
+        cargo:cargo,
+        time:time
+    })
 }
 
     return (
@@ -52,7 +58,14 @@ const aoSalvar = (evento) => {
                     aoAlterado ={valor => setImagem(valor)} 
                     />
                     {/**Abaixo vai ser passado a Lista Suspensa com as Props */}
-                    <ListaSuspensa label="Time" obrigatorio ={true} itens={times}/>
+                    <ListaSuspensa 
+                    label="Time" 
+                    obrigatorio ={true} 
+                    itens={times}
+                    value = {time}
+                    aoAlterado = {valor =>setTime(valor)}
+                    />
+                    
                     {/*Informações do Botão */}
                     <Botao>{/*Exemplo de Children Props */}
                         Criar Card
