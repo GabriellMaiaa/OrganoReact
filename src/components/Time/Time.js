@@ -10,7 +10,9 @@ const Time = (props) => { //Vamos chamar por Props devido ao parâmetros dela qu
     <div>
       <section className='time' style={estiloCorSecundaria}>
         <h3 style={estiloBorda}>{props.nome}</h3>
+        <div className="colaboradores">
         {props.colaboradores.map(colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} img={colaborador.img}/>)}
+        </div>
       </section>
     </div>
   )

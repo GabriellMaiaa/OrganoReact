@@ -1,15 +1,15 @@
 import React from 'react'
 import './Colaborador.css'
 
-const Colaborador = (props) => {
+const Colaborador = ({nome,img,cargo}) => {
   return (
     <div className='colaborador'> {/*Vai ser dividido entre a parte da foto e a parte do nome e o cargo */}
       <div className='cabecalho'>
-        <img src={props.img} alt={props.nome} />
+        <img src={img} alt={nome} />
       </div>
       <div className='rodape'>{/*Parte do nome e cargo */}
-        <h4>{props.nome}</h4>
-        <h5>{props.cargo}</h5>
+        <h4>{nome}</h4>
+        <h5>{cargo}</h5>
       </div>
     </div>
   )
