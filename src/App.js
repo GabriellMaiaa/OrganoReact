@@ -40,7 +40,7 @@ function App() {
 
   ]
   
-  const [colaboradores, setColaboradores] = useState('')
+  const [colaboradores, setColaboradores] = useState([])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {//Essa função fica dentro de outra
     console.log(colaborador)
@@ -49,8 +49,16 @@ function App() {
   return (
     <div className="App"> 
       <Banner/>
+      
       <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>{/*Função vai ser chamada no formulário */}
-      {times.map(time => <Time key={time.nome} nome= {time.nome} corPrimaria={time.corPrimaria} corSecundaria = {time.corSecundaria}/>)} {/*Sempre por a Key que serve para renderizar */}
+      {times.map(time => <Time 
+      key={time.nome} 
+      nome= {time.nome} 
+      corPrimaria={time.corPrimaria} 
+      corSecundaria = {time.corSecundaria}
+      colaboradores ={colaboradores}
+      />)} {/*Sempre por a Key que serve para renderizar */}
+    
     </div>
   );
 }
