@@ -49,10 +49,8 @@ function App() {
   return (
     <div className="App"> 
       <Banner/>
-      <Formulario aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>{/*Função vai ser chamada no formulário */}
-      <Time nome='Programação'/>
-      <Time nome='Front-End'/>
-      <Time nome='Data Science'/>
+      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>{/*Função vai ser chamada no formulário */}
+      {times.map(time => <Time key={time.nome} nome= {time.nome} corPrimaria={time.corPrimaria} corSecundaria = {time.corSecundaria}/>)} {/*Sempre por a Key que serve para renderizar */}
     </div>
   );
 }

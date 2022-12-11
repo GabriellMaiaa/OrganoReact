@@ -7,14 +7,7 @@ import "./Formulario.css"
 
 const Formulario = (props) => {
    
-   const times = [ //Esse Array vai ser usado como valor para a nossa PROPS Itenss
-    'Programação',
-    'Front-End',
-    'Data-Science',
-    'UX e Design',
-    'Mobile',
-    'Inovação e Gestão'
-   ]
+
 
 const [nome, setNome] = useState('') // Tem que ter uma Alteração de estado para cada uma OPÇÃO
 const [cargo, setCargo] = useState('')
@@ -61,7 +54,7 @@ const aoSalvar = (evento) => {
                     <ListaSuspensa 
                     label="Time" 
                     obrigatorio ={true} 
-                    itens={times}
+                    itens={props.times}
                     value = {time}
                     aoAlterado = {valor =>setTime(valor)}
                     />
