@@ -7,14 +7,14 @@ const Time = (props) => { //Vamos chamar por Props devido ao parâmetros dela qu
   const estiloBorda = {borderColor: props.corPrimaria}//A propriedade css tem que estar no nome padrão da linguagem. Ex: borderColor
 
   return (
-    <div>
-      <section className='time' style={estiloCorSecundaria}>
+    (props.colaboradores.length > 0) && // Condição para ser realizado a adição de colaboradores, pode ser assim ou com IF
+    <section className='time' style={estiloCorSecundaria}>
         <h3 style={estiloBorda}>{props.nome}</h3>
         <div className="colaboradores">
         {props.colaboradores.map(colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} img={colaborador.img}/>)}
         </div>
       </section>
-    </div>
+    
   )
 }
 

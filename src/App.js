@@ -56,7 +56,7 @@ function App() {
       nome= {time.nome} 
       corPrimaria={time.corPrimaria} 
       corSecundaria = {time.corSecundaria}
-      colaboradores ={colaboradores.filter(colaborador => colaborador.time === time.nome)} 
+      colaboradores ={colaboradores.filter(colaborador => colaborador.time === time.nome)} /*Aqui conserta os cadastros nas suas re */
       />)} {/*Sempre por a Key que serve para renderizar */}
     
     </div>
