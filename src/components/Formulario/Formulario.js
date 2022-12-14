@@ -22,6 +22,10 @@ const aoSalvar = (evento) => {
         cargo:cargo,
         time:time
     })
+    setNome('') //Se faz isso para poder limpar os campos após um reset na pág
+    setCargo('')
+    setImagem('')
+    setTime('')
 }
 
     return (
@@ -46,7 +50,7 @@ const aoSalvar = (evento) => {
                     
                     <CampoTexto 
                     label="Imagem" 
-                    placeholder='Digite o indereço da imagem'
+                    placeholder='Digite o endereço da imagem'
                     value = {imagem}
                     aoAlterado ={valor => setImagem(valor)} 
                     />
