@@ -4,6 +4,7 @@ import Banner from './components/Banner/Banner';
 //import CampoTexto from './components/CampoTexto/CampoTexto';
 import Formulario from './components/Formulario/Formulario';
 import Time from './components/Time/Time';
+import Rodape from './Rodape/Rodape';
 
 function App() {
   const times =[ //Criar esse array para auxiliar nas cores diferentes da caixa de cada um
@@ -43,7 +44,6 @@ function App() {
   const [colaboradores, setColaboradores] = useState([])
 
   const aoNovoColaboradorAdicionado = (colaborador) => {//Essa função fica dentro de outra
-    console.log(colaborador)
     setColaboradores([...colaboradores, colaborador])
   }
   return (
@@ -58,6 +58,7 @@ function App() {
       corSecundaria = {time.corSecundaria}
       colaboradores ={colaboradores.filter(colaborador => colaborador.time === time.nome)} /*Aqui conserta os cadastros nas suas re */
       />)} {/*Sempre por a Key que serve para renderizar */}
+      <Rodape/>
     
     </div>
   );

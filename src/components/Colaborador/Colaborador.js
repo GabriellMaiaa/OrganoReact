@@ -1,10 +1,10 @@
 import React from 'react'
 import './Colaborador.css'
 
-const Colaborador = ({nome,img,cargo}) => {
+const Colaborador = ({nome,img,cargo, corDeFundo}) => {
   return (
     <div className='colaborador'> {/*Vai ser dividido entre a parte da foto e a parte do nome e o cargo */}
-      <div className='cabecalho'>
+      <div className='cabecalho' style={{backgroundColor: corDeFundo}}>
         <img src='https://github.com/GabriellMaiaa.png' alt={nome} />
       </div>
       <div className='rodape'>{/*Parte do nome e cargo */}
