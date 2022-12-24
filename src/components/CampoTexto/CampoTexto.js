@@ -1,6 +1,6 @@
 import React from 'react'
 import './CampoTexto.css'
-import { useState } from 'react'
+
 
 const CampoTexto = (props) => {
     const placeholderModificada = `${props.placeholder}...`

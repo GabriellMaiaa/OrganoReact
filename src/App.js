@@ -1,10 +1,10 @@
-
 import { useState } from 'react';
 import Banner from './components/Banner/Banner';
 //import CampoTexto from './components/CampoTexto/CampoTexto';
 import Formulario from './components/Formulario/Formulario';
 import Time from './components/Time/Time';
 import Rodape from './Rodape/Rodape';
+import React from 'react';
 
 function App() {
   const times =[ //Criar esse array para auxiliar nas cores diferentes da caixa de cada um
@@ -46,17 +46,23 @@ function App() {
   const aoNovoColaboradorAdicionado = (colaborador) => {//Essa função fica dentro de outra
     setColaboradores([...colaboradores, colaborador])
   }
+  function colaboradorDeletado(){
+    console.log('Deletandoo')
+  }
+
   return (
     <div className="App"> 
       <Banner/>
-      
       <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>{/*Função vai ser chamada no formulário */}
-      {times.map(time => <Time 
-      key={time.nome} 
-      nome= {time.nome} 
-      corPrimaria={time.corPrimaria} 
-      corSecundaria = {time.corSecundaria}
-      colaboradores ={colaboradores.filter(colaborador => colaborador.time === time.nome)} /*Aqui conserta os cadastros nas suas re */
+      {times.map(time => 
+      <Time 
+        key={time.nome} 
+        nome= {time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria = {time.corSecundaria}
+        colaboradores ={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+        aoDeletar={del => {colaboradorDeletado(del)}}
+        /*Aqui conserta os cadastros nas suas re */
       />)} {/*Sempre por a Key que serve para renderizar */}
       <Rodape/>
     
